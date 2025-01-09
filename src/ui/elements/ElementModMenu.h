@@ -17,7 +17,6 @@ private:
 	void CreateModList();
 	Rml::ElementPtr CreateModListEntry(const recomp::mods::ModDetails& details, size_t index);
 	Rml::Element *refresh_button;
-	Rml::Element *close_button;
 	Rml::Element *list_el; // The root mod list element.
 	Rml::Element *list_el_scroll; // The scroll within the root mod list element.
 	ElementModDetailsPanel *details_el; // The details panel.

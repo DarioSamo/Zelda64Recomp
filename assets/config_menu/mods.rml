@@ -1,0 +1,11 @@
+<template name="config-menu__mods">
+    <head>
+    </head>
+    <body>
+        <form class="config__form" id="conf-mods__form">
+            <div class="config__hz-wrapper" id="conf-mods__hz-wrapper">
+                <recomp-mod-menu />
+            </div>
+        </form>
+    </body>
+</template>
