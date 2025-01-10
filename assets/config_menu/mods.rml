@@ -2,10 +2,8 @@
     <head>
     </head>
     <body>
-        <form class="config__form" id="conf-mods__form">
-            <div class="config__hz-wrapper" id="conf-mods__hz-wrapper">
-                <recomp-mod-menu />
-            </div>
+        <form class="config__form">
+            <recomp-mod-menu />
         </form>
     </body>
 </template>

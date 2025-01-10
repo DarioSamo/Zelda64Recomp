@@ -2282,56 +2282,12 @@ scrollbarhorizontal sliderbar {
 
 .mod-menu {
   display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 64dp;
-  background-color: rgba(8, 7, 13, 0.9);
-}
-.mod-menu__modal-wrapper {
-  display: flex;
   position: relative;
   flex: 1 1 100%;
   flex-direction: column;
-  width: 100%;
-  max-width: 1692.4444444444dp;
-  height: 100%;
-  margin: auto;
-  border-width: 1.1dp;
-  border-radius: 16dp;
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.35);
-}
-.mod-menu__modal-header {
-  display: flex;
-  position: relative;
-  flex: 1 1 auto;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: auto;
-  padding: 16dp;
-  border-bottom-width: 1.1dp;
-  border-top-left-radius: 16dp;
-  border-top-right-radius: 16dp;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  background-color: rgba(190, 184, 219, 0.1);
-}
-.mod-menu__modal-body {
-  display: flex;
-  position: relative;
-  flex: 1 1 auto;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: auto;
+  height: 100%;
 }
 .mod-menu__list {
   display: block;
@@ -2443,8 +2399,21 @@ scrollbarhorizontal sliderbar {
   height: auto;
   padding-left: 16dp;
 }
+.mod-details__buttons {
+  display: flex;
+  position: relative;
+  flex: 1 1 auto;
+  flex-direction: row;
+  height: auto;
+  padding-left: 16dp;
+  justify-content: space-around;
+}
 .mod-details__authors, .mod-details__description {
+  flex: 1 1 auto;
   margin-top: 16dp;
+}
+.mod-details__spacer {
+  flex: 1 1 100%;
 }
 
 .config-debug {

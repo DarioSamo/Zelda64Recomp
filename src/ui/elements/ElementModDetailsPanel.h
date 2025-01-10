@@ -18,6 +18,9 @@ private:
     Rml::Element* authors_el;
     Rml::Element* version_el;
     Rml::Element* description_el;
+    Rml::Element* enable_button;
+    Rml::Element* configure_button;
+    Rml::Element* delete_button;
 };
 
 } // namespace recompui

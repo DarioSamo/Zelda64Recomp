@@ -42,7 +42,7 @@
         display: flex;
         position: relative;
         flex-direction: column;
-        justify-content:space-evenly;
+        justify-content: space-evenly;
         width: auto;
         height: auto;
         margin-left: space(16);
@@ -66,9 +66,23 @@
         padding-left: space(16);
     }
 
+    &__buttons {
+        display: flex;
+        position: relative;
+        flex: 1 1 auto;
+        flex-direction: row;
+        height: auto;
+        padding-left: space(16);
+        justify-content: space-around;
+    }
+
     &__authors, &__description {
         @extend %label-md;
+        flex: 1 1 auto;
         margin-top: space(16);
     }
-}
 
+    &__spacer {
+        flex: 1 1 100%;
+    }
+}

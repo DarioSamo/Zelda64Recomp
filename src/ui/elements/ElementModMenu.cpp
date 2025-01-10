@@ -115,20 +115,22 @@ ElementModMenu::ElementModMenu(const Rml::String& tag) : Rml::Element(tag) {
     Rml::ElementDocument *doc = GetOwnerDocument();
     SetClass(cls_base, true);
 
-    list_el = add_div_with_class(doc, this, cls_list);
+    Rml::Element *body_el = add_div_with_class(doc, this, "config__hz-wrapper");
     {
-        list_el_scroll = add_div_with_class(doc, list_el, cls_list_scroll);
-    } // list_el
+        list_el = add_div_with_class(doc, body_el, cls_list);
+        {
+            list_el_scroll = add_div_with_class(doc, list_el, cls_list_scroll);
+        } // list_el
 
-    refresh_button = add_button(doc, this, "Refresh", ButtonVariant::Primary);
-    refresh_button->AddEventListener(Rml::EventId::Click, this, false);
-    refresh_button->SetId("refresh-button");
+        details_el = static_cast<ElementModDetailsPanel *>(body_el->AppendChild(doc->CreateElement("recomp-mod-details-panel")));
+    } // body_el
 
-    details_el = static_cast<ElementModDetailsPanel *>(list_el->AppendChild(doc->CreateElement("recomp-mod-details-panel")));
-
-    //refresh_button->SetProperty("nav-right", "#" + close_button->GetId());
-    //close_button->SetProperty("nav-left", "#" + refresh_button->GetId());
-
+    Rml::Element *footer_el = add_div_with_class(doc, this, "config__footer");
+    {
+        refresh_button = add_button(doc, footer_el, "Refresh", ButtonVariant::Primary);
+        refresh_button->AddEventListener(Rml::EventId::Click, this, false);
+        refresh_button->SetId("refresh-button");
+    } // footer_el
 
     RefreshMods();
 }
