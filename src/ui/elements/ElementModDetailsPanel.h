@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "librecomp/mods.hpp"
+#include "ui_toggle.h"
 
 namespace recompui {
 
@@ -18,9 +19,9 @@ private:
     Rml::Element* authors_el;
     Rml::Element* version_el;
     Rml::Element* description_el;
-    Rml::Element* enable_button;
     Rml::Element* configure_button;
     Rml::Element* delete_button;
+    std::unique_ptr<recompui::Toggle> enable_toggle;
 };
 
 } // namespace recompui

@@ -174,6 +174,8 @@ set (SOURCES
     ${CMAKE_SOURCE_DIR}/src/ui/elements/ElementModMenu.cpp
     ${CMAKE_SOURCE_DIR}/src/ui/elements/ElementModDetailsPanel.cpp
     ${CMAKE_SOURCE_DIR}/src/ui/elements/presets.cpp
+    ${CMAKE_SOURCE_DIR}/src/ui/elements/ui_element.cpp
+    ${CMAKE_SOURCE_DIR}/src/ui/elements/ui_toggle.cpp
 
     ${CMAKE_SOURCE_DIR}/rsp/aspMain.cpp
     ${CMAKE_SOURCE_DIR}/rsp/njpgdspMain.cpp

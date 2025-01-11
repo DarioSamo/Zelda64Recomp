@@ -42,6 +42,8 @@ void ElementModMenu::ProcessEvent(Rml::Event& event) {
                 event_element->SetAttribute("is_selected", true);
                 active_list_entry_el = event_element;
             }
+        default:
+            break;
     }
 }
 

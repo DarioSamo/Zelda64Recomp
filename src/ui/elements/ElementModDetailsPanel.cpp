@@ -5,6 +5,7 @@
 #include <string>
 
 #define MOD_DETAILS_BEM "mod-details"
+#define MOD_DETAILS_TOGGLE_BEM "mod-details-toggle"
 
 namespace recompui {
 
@@ -20,6 +21,8 @@ static const std::string cls_buttons = EL(MOD_DETAILS_BEM, "buttons");
 static const std::string cls_authors = EL(MOD_DETAILS_BEM, "authors");
 static const std::string cls_description = EL(MOD_DETAILS_BEM, "description");
 static const std::string cls_spacer = EL(MOD_DETAILS_BEM, "spacer");
+static const std::string cls_toggle = BLOCK(MOD_DETAILS_TOGGLE_BEM);
+static const std::string cls_toggle_border = EL(MOD_DETAILS_TOGGLE_BEM, "border");
 
 ElementModDetailsPanel::ElementModDetailsPanel(const Rml::String& tag) : Rml::Element(tag)
 {
@@ -46,10 +49,10 @@ ElementModDetailsPanel::ElementModDetailsPanel(const Rml::String& tag) : Rml::El
             description_el = add_div_with_class(doc, body_el, cls_description);
             authors_el = add_div_with_class(doc, body_el, cls_authors);
 
-            Rml::Element *spacer_el = add_div_with_class(doc, body_el, cls_spacer);
             Rml::Element *buttons_el = add_div_with_class(doc, body_el, cls_buttons);
             {
-                enable_button = add_button(doc, buttons_el, "Enable", ButtonVariant::Secondary);
+                recompui::Element buttons_el_compat(buttons_el);
+                enable_toggle = std::make_unique<recompui::Toggle>(&buttons_el_compat);
                 configure_button = add_button(doc, buttons_el, "Configure", ButtonVariant::Secondary);
                 delete_button = add_button(doc, buttons_el, "Erase", ButtonVariant::Secondary);
             } // buttons_el
