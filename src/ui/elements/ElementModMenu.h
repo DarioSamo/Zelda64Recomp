@@ -3,7 +3,7 @@
 
 #include "common.h"
 #include "librecomp/mods.hpp"
-#include "ElementModDetailsPanel.h"
+#include "ui_mod_details_panel.h"
 
 namespace recompui {
 
@@ -19,7 +19,7 @@ private:
 	Rml::Element *refresh_button;
 	Rml::Element *list_el; // The root mod list element.
 	Rml::Element *list_el_scroll; // The scroll within the root mod list element.
-	ElementModDetailsPanel *details_el; // The details panel.
+	std::unique_ptr<ModDetailsPanel> mod_details_panel;
 	Rml::Element *active_list_entry_el = nullptr;
 	std::vector<recomp::mods::ModDetails> mod_details{};
 	std::string game_mod_id;

@@ -15,7 +15,7 @@ h2 {
   font-weight: 700;
 }
 
-h3, .mod-details__title, .tab {
+h3, .tab {
   font-size: 36dp;
   letter-spacing: 2.52dp;
   line-height: 36dp;
@@ -31,7 +31,7 @@ h3, .mod-details__title, .tab {
   font-weight: 700;
 }
 
-.label-md, .config-debug-option__label, .mod-details__authors, .mod-details__description, .mod-details__version, .mod-menu__list-entry-name, .button, .config-option__title, .config-option--hz .config-option__title, .config-group__title, .control-option__label {
+.label-md, .config-debug-option__label, .mod-menu__list-entry-name, .button, .config-option__title, .config-option--hz .config-option__title, .config-group__title, .control-option__label {
   font-size: 28dp;
   letter-spacing: 3.08dp;
   line-height: 28dp;
@@ -142,7 +142,7 @@ h2 {
   font-weight: 700;
 }
 
-h3, .mod-details__title, .tab {
+h3, .tab {
   font-size: 36dp;
   letter-spacing: 2.52dp;
   line-height: 36dp;
@@ -158,7 +158,7 @@ h3, .mod-details__title, .tab {
   font-weight: 700;
 }
 
-.label-md, .config-debug-option__label, .mod-details__authors, .mod-details__description, .mod-details__version, .mod-menu__list-entry-name, .button, .config-option__title, .config-option--hz .config-option__title, .config-group__title, .control-option__label {
+.label-md, .config-debug-option__label, .mod-menu__list-entry-name, .button, .config-option__title, .config-option--hz .config-option__title, .config-group__title, .control-option__label {
   font-size: 28dp;
   letter-spacing: 3.08dp;
   line-height: 28dp;
@@ -2352,68 +2352,6 @@ scrollbarhorizontal sliderbar {
 }
 .mod-menu__list-entry-description {
   padding-top: 8dp;
-}
-
-.mod-details {
-  display: block;
-  position: relative;
-  flex: 1 1 200%;
-  height: 100%;
-  flex-direction: column;
-  border-bottom-right-radius: 16dp;
-  background-color: rgba(190, 184, 219, 0.1);
-}
-.mod-details__header {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-  padding: 16dp;
-  background: rgba(0, 0, 0, 0.35);
-}
-.mod-details__thumbnail-container {
-  height: auto;
-  width: auto;
-}
-.mod-details__thumbnail {
-  height: 100dp;
-  width: 100dp;
-  background-color: rgba(190, 184, 219, 0.1);
-}
-.mod-details__header-details {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: auto;
-  height: auto;
-  margin-left: 16dp;
-  overflow: hidden;
-}
-.mod-details__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  padding-left: 16dp;
-}
-.mod-details__buttons {
-  display: flex;
-  position: relative;
-  flex: 1 1 auto;
-  flex-direction: row;
-  height: auto;
-  padding-left: 16dp;
-  justify-content: space-around;
-}
-.mod-details__authors, .mod-details__description {
-  flex: 1 1 auto;
-  margin-top: 16dp;
-}
-.mod-details__spacer {
-  flex: 1 1 100%;
 }
 
 .config-debug {

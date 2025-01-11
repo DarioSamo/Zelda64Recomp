@@ -1,5 +1,4 @@
 #include "ElementModMenu.h"
-#include "ElementModDetailsPanel.h"
 #include "presets.h"
 #include "librecomp/mods.hpp"
 
@@ -34,7 +33,7 @@ void ElementModMenu::ProcessEvent(Rml::Event& event) {
                 size_t mod_index;
                 Rml::Variant *val = event_element->GetAttribute("mod_index");
                 if (val->GetInto(mod_index) && mod_index < mod_details.size()) {
-                    details_el->SetModDetails(mod_details[mod_index]);
+                    mod_details_panel->set_mod_details(mod_details[mod_index]);
                 }
                 if (active_list_entry_el != nullptr) {
                     active_list_entry_el->RemoveAttribute("is_selected");
@@ -106,7 +105,7 @@ void ElementModMenu::RefreshMods() {
     recomp::mods::scan_mods();
     mod_details = recomp::mods::get_mod_details(game_mod_id);
 
-    details_el->SetModDetails(mod_details[0]);
+    mod_details_panel->set_mod_details(mod_details[0]);
 
     CreateModList();
 }
@@ -124,7 +123,8 @@ ElementModMenu::ElementModMenu(const Rml::String& tag) : Rml::Element(tag) {
             list_el_scroll = add_div_with_class(doc, list_el, cls_list_scroll);
         } // list_el
 
-        details_el = static_cast<ElementModDetailsPanel *>(body_el->AppendChild(doc->CreateElement("recomp-mod-details-panel")));
+        recompui::Element body_el_compat(body_el);
+        mod_details_panel = std::make_unique<ModDetailsPanel>(&body_el_compat);
     } // body_el
 
     Rml::Element *footer_el = add_div_with_class(doc, this, "config__footer");
